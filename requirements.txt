@@ -1,13 +1,11 @@
 faiss-cpu==1.7.4
-huggingface-hub @ file:///C:/b/abs_46tn6fu5ho/croot/huggingface_hub_1686693723427/work
+huggingface-hub 
 InstructorEmbedding==1.0.1
-ipython @ file:///C:/b/abs_e5729i179y/croot/ipython_1694181400005/work
 langchain==0.1.6
 langchain-community==0.0.19
 langchain-core==0.1.22
-langsmith==0.0.87
 PyPDF2==3.0.1
 streamlit==1.30.0
 streamlit-chat==0.1.1
-transformers @ file:///C:/b/abs_375hgbdwge/croot/transformers_1693308365188/work
+transformers
 
