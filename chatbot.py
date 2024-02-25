@@ -1,5 +1,5 @@
 import streamlit as st
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
@@ -94,7 +94,7 @@ def process_user_input(user_question):
             message(chat.content)
 
 def main():
-    load_dotenv()
+    # load_dotenv()
     st.set_page_config(page_title='GST-bot', page_icon=':books:')
 
     if "conversation" not in st.session_state: #initializing session variables conversation and chat history
