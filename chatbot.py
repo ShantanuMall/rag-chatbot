@@ -95,7 +95,7 @@ def process_user_input(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title='GST Assistance', page_icon=':books:')
+    st.set_page_config(page_title='GST-bot', page_icon=':books:')
 
     if "conversation" not in st.session_state: #initializing session variables conversation and chat history
         st.session_state.conversation = None
@@ -105,13 +105,29 @@ def main():
 
     #main UI
     st.header('Get Your GST Queries Resolved :books:')
-    user_question = st.text_input('Ask any GST-related question')
+    user_question = st.text_input('Ask your doubts')
     if user_question:
         process_user_input(user_question)
 
-    with st.sidebar: #sidebar UI
-        st.subheader('Your Uploaded Documents')
-        pdf_docs = st.file_uploader('Please Upload PDFs', accept_multiple_files=True)
+    with st.sidebar: # Sidebar UI
+        st.subheader('GST-bot is here to solve your queries')
+        st.write('Ask me questions related to the Goods and Services Tax in India')
+
+        # Option to choose between uploading or using already uploaded documents
+        st.subheader('\n')
+        option = st.radio("Choose an option to proceed", ("Upload Documents", "Use Existing"))
+
+        if option == "Upload Documents":
+            uploaded_files = st.file_uploader('Please Upload PDFs', accept_multiple_files=True)
+            if uploaded_files:
+                pdf_docs = uploaded_files
+        else:
+            pdf_file_paths = [
+                "pdfs_docs/gst_1.pdf",
+                "pdfs_docs/gst_2.pdf",
+                "pdfs_docs/gst_3.pdf"
+            ]
+            pdf_docs = [open(pdf_path, "rb") for pdf_path in pdf_file_paths]
         if st.button('Proceed'):
             with st.spinner('Processing Documents...'): #processing to be done after pdf documents uploaded by user
                 #calling Extract text function from PDFs
