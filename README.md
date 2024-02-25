@@ -1,6 +1,6 @@
 # GST-bot
 
-GST-bot is a Streamlit-based chatbot designed to resolve queries related to the Goods and Services Tax (GST) in India. It utilizes PDF documents to extract information and provides conversational interaction for users to ask questions.
+GST-bot is a Streamlit-based chatbot designed to resolve queries related to the Goods and Services Tax (GST) in India. It utilizes PDF documents to extract information and provides conversational interaction for users to ask questions. Powered by the RAG (Retrieval-Augmented Generation) framework, GST-bot delivers effective question answering by combining retrieval-based methods with generative capabilities.
 
 ## Getting Started
 
